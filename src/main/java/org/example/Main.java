@@ -1,17 +1,20 @@
 package org.example;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class Main {
     public static void main(String[] args) {
-        WebDriverManager.chromedriver().clearDriverCache().setup();
+        WebDriverManager.chromedriver().setup();
 
-        WebDriver driver = new ChromeDriver();
+        ChromeDriver driver = new ChromeDriver();
 
-        driver.get("www.google.com");
+        driver.get("http://www.google.com");
+        driver.findElement(By.id("APjFqb")).sendKeys("roti bakar");
+
+        driver.quit();
 
     }
 }
